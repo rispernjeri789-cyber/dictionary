@@ -18,10 +18,10 @@ async function fetchWord(word) {
 
         console.log("Fetched data:", data);
 
-        // ✅ Get pronunciation audio (if available)
+        // Get pronunciation audio (if available)
         let audio = data[0].phonetics.find(p => p.audio)?.audio || "";
 
-        // ✅ Get synonyms (if available)
+        // Get synonyms (if available)
         let synonyms = data[0].meanings[0].synonyms;
         let synonymText = synonyms.length > 0 ? synonyms.join(", ") : "No synonyms";
 
@@ -45,7 +45,7 @@ async function fetchWord(word) {
     }
 }
 
-// ✅ Function to play audio
+// Function to play audio
 function playSound(url) {
     let sound = new Audio(url);
     sound.play();
